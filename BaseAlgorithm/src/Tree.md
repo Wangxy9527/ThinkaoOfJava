@@ -1,17 +1,19 @@
 树篇：
 
 1.求二叉树的深度
-	`public int TreeDepth(TreeNode root) {
+	
+	public int TreeDepth(TreeNode root) {
         if(root==null){
             return 0;
         }
         int left = TreeDepth(root.left);
         int right = TreeDepth(root.right);
         return left > right ? (left+1):(right+1);
-    }`
+    }
     
 2.判断树是否为平衡二叉树
-	`public boolean IsBalanced_Solution(TreeNode root) {
+	
+	public boolean IsBalanced_Solution(TreeNode root) {
         if(root==null){
             return true;
         }
@@ -31,10 +33,11 @@
 		int left = Depth(root.left);
 		int right = Depth(root.right);
 		return left > right ? (left+1):(right+1);
-     }`
+     }
 	 
-3. 输入两棵二叉树A，B，判断B是不是A的子结构
-	`public boolean HasSubtree(TreeNode root1,TreeNode root2) {
+3.输入两棵二叉树A，B，判断B是不是A的子结构
+	
+	public boolean HasSubtree(TreeNode root1,TreeNode root2) {
         boolean result = false;
         if(root1!=null&&root2!=null){
             if(root1.val==root2.val){
@@ -60,10 +63,11 @@
             return false;
         }
         return isChild(node1.left,node2.left)&&isChild(node1.right,node2.right);
-    }`
+    }
 	
 4.输入某二叉树的前序遍历和中序遍历的结果，重建出该二叉树
-	`public TreeNode reConstructBinaryTree(int [] pre,int [] in) {
+	
+	public TreeNode reConstructBinaryTree(int [] pre,int [] in) {
         TreeNode root = reConstructBinaryTree(pre,0,pre.length-1,in,0,pre.length-1);
         return root;
     }
@@ -80,10 +84,11 @@
             }
         }
         return root;   
-    }`
+    }
 	
 5.从上到下按层打印二叉树，同一层结点从左至右输出。每一层输出一行
-	`ArrayList<ArrayList<Integer> > Print(TreeNode pRoot) {
+	
+	ArrayList<ArrayList<Integer> > Print(TreeNode pRoot) {
         ArrayList<ArrayList<Integer>> list = new ArrayList<>();
         depth(pRoot,1,list);
         return list;
@@ -98,10 +103,11 @@
         list.get(depth-1).add(root.val);
         depth(root.left,depth+1,list);
         depth(root.right,depth+1,list);
-    }`
+    }
 	
 6.序列化和反序列化二叉树 
-	`private String str;
+	
+	private String str;
     String Serialize(TreeNode root){
         if(root == null)
             return "#";
@@ -124,10 +130,11 @@
         node.left = Deserialize(str);
         node.right = Deserialize(str);
         return node;
-    }`
+    }
 	
 7.给定一棵二叉搜索树，请找出其中的第k小的结点（中序遍历：二叉搜索树按照中序遍历的顺序打印出来正好就是排序好的顺序。所以，按照中序遍历顺序找到第k个结点就是结果）
-	`int index = 0;
+	
+	int index = 0;
     TreeNode KthNode(TreeNode pRoot, int k) {
         if(pRoot !=null){
             TreeNode node1 = KthNode(pRoot.left, k);
@@ -144,4 +151,4 @@
             }
         }
         return null;
-    }`
+    }

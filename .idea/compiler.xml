@@ -7,8 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ExcelToDatabase" />
-        <module name="PageHelper" />
         <module name="ThinkaoOfJava" />
+        <module name="PageHelper" />
       </profile>
     </annotationProcessing>
   </component>

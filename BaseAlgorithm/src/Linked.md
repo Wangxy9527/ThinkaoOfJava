@@ -1,17 +1,19 @@
 链表篇：
 
 1.从尾到头打印链表
-	`public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
+
+	public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
         ArrayList<Integer> list = new ArrayList<Integer>();
         while(listNode!=null){
             list.add(0,listNode.val);
             listNode = listNode.next;
         }
         return list;
-    }`
+    }
 
 2.输入一个链表，反转链表后，输出新链表的表头
-	`public ListNode ReverseList(ListNode head) {
+
+	public ListNode ReverseList(ListNode head) {
         if(head==null||head.next==null){
             return head;
         }
@@ -24,10 +26,11 @@
             head = next;
         }
         return pre;
-    }`
+    }
 
 3.输入一个链表，输出该链表中倒数第k个结点
-	`public ListNode FindKthToTail(ListNode head,int k) {
+
+	public ListNode FindKthToTail(ListNode head,int k) {
        if(head==null){
            return null;
        }
@@ -41,10 +44,11 @@
             p1 = p1.next;
         }
         return k > i ? null : p2; 
-    }`
+    }
     
 4.输入两个单调递增的链表，输出两个链表合成后的链表，合成后的链表满足单调不减规则
-	`public ListNode Merge(ListNode list1,ListNode list2) {
+	
+	public ListNode Merge(ListNode list1,ListNode list2) {
         if(list1==null){
             return list2;
         }
@@ -58,10 +62,11 @@
             list1.next = Merge(list1.next,list2);
             return list1;
         }
-    }`
+    }
 	
 5.输入两个链表，找出它们的第一个公共结点
-	`ListNode* FindFirstCommonNode( ListNode* pHead1, ListNode* pHead2) {
+	
+	ListNode* FindFirstCommonNode( ListNode* pHead1, ListNode* pHead2) {
         ListNode *p1 = pHead1;
         ListNode *p2 = pHead2;
         while(p1!=p2){
@@ -69,10 +74,11 @@
             p2 = (p2==NULL?pHead1 : p2->next);
         }
         return p1;
-    }`
+    }
 	
 6.给一个链表，若其中包含环，请找出该链表的环的入口结点
-	`public ListNode EntryNodeOfLoop(ListNode pHead){
+	
+	public ListNode EntryNodeOfLoop(ListNode pHead){
         if(pHead==null||pHead.next==null){
             return null;
         }
@@ -93,10 +99,11 @@
             }
         }
         return null;
-    }`
+    }
     
 7.删除链表中重复的结点
-	`public ListNode deleteDuplication(ListNode pHead){
+	
+	public ListNode deleteDuplication(ListNode pHead){
         if(pHead==null||pHead.next==null){
             return pHead;
         }
@@ -110,4 +117,4 @@
             pHead.next = deleteDuplication(pHead.next);
             return pHead;
         }
-    }`
+    }
